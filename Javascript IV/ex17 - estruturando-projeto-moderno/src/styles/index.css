@@ -1,0 +1,137 @@
+:root {
+  /* Paleta de cores moderna */
+  --bg-color: #0f172a;
+  --board-bg: #1e293b;
+  --cell-bg: #334155;
+  --cell-hover: #475569;
+  --accent: #3b82f6;
+  --win-color: #10b981;
+  --text-main: #f8fafc;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+#turnPlayer {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* --- Títulos, Labels e Inputs (Alinhamento Corrigido) --- */
+label {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+input {
+  background: var(--board-bg);
+  border: 1px solid var(--cell-bg);
+  color: var(--text-main);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+  display: block;
+  margin: 0 auto 1.5rem auto; /* Centraliza horizontalmente e dá espaço embaixo */
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+button#start {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: block;
+  margin: 0 auto 2rem auto; /* Centraliza o botão */
+}
+
+button#start:hover {
+  background-color: #2563eb;
+}
+
+button#start:active {
+  transform: scale(0.95);
+}
+
+/* --- Tabuleiro --- */
+#gameBoard {
+  background-color: var(--board-bg);
+  display: grid;
+  grid-template-columns: repeat(3, 7rem);
+  grid-template-rows: repeat(3, 7rem);
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+#gameBoard span {
+  background-color: var(--cell-bg);
+  border-radius: 8px;
+  display: grid;
+  place-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text-main);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+#gameBoard span.cursor-pointer:hover {
+  background-color: var(--cell-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#gameBoard span.cursor-pointer:active {
+  transform: scale(0.95);
+}
+
+/* --- Animação de Vitória --- */
+@keyframes pulse-win {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+#gameBoard span.win {
+  background-color: var(--win-color);
+  color: #064e3b;
+  text-shadow: none;
+  transform: scale(1.05);
+  animation: pulse-win 1.5s infinite;
+  z-index: 1;
+}
