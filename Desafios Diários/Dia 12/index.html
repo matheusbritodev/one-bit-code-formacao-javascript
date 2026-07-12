@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Pelada</title>
+    <script type="module" src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sorteador de Times</h1>
+
+    <section id="entrada-dados">
+        <label for="lista-jogadores">Lista de Jogadores (Nome Nota ou G):</label><br>
+        <textarea id="lista-jogadores" rows="10" cols="30" placeholder="Ex:&#10;João 5&#10;Pedro G&#10;Lucas 4"></textarea>
+        <br><br>
+
+        <label for="qtd-por-time">Jogadores de linha por time:</label>
+        <input type="number" id="qtd-por-time" min="1" value="5">
+        <br><br>
+
+        <button id="btn-gerar">Gerar Times</button>
+        <button id="btn-limpar">Apagar Tudo</button>
+    </section>
+
+    <hr>
+
+    <section id="saida-dados">
+        <div id="container-times"></div>
+
+        <div id="container-goleiros">
+            <ul id="lista-goleiros"></ul>
+        </div>
+    </section>
+
+    
+</body>
+</html>
