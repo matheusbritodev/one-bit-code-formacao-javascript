@@ -11,7 +11,7 @@ function agruparAnagrama (array) {
         output[palavraOrdenada] = []
     }
 
-    outp ut[palavraOrdenada].push(palavra)
+    output[palavraOrdenada].push(palavra)
     }
 
     return Object.values(output)
