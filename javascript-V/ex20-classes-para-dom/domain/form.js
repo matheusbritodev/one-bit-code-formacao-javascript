@@ -1,4 +1,4 @@
-import { Component } from "./superClass.js"
+import { Component } from "./component.js"
 
 export class FormElements extends Component {
     constructor() {
