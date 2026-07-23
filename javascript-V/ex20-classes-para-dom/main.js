@@ -17,7 +17,7 @@ Você deverá criar, no mínimo, 4 classes diferentes:
 import { FormElements } from "./domain/form.js" 
 import { InputElements } from "./domain/input.js" 
 import { LabelElements } from "./domain/label.js" 
-import { Component } from "./domain/superClass.js"
+import { Component } from "./domain/component.js"
 
 // 1. Cria as instâncias
 const meuForm = new FormElements()
