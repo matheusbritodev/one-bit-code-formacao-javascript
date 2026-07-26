@@ -1,11 +1,11 @@
-class ItemCardapio {
+class ItemMenu {
     constructor(name, value) {
         this.name = name
         this.value = value
     }
 }
 
-class Mesa {
+class Table {
     #check = 0
     constructor(id) {
         this.id = id
@@ -29,12 +29,12 @@ class Mesa {
     }
 }
 
-const pizza = new ItemCardapio("Pizza", 50)
-const suco = new ItemCardapio("Suco", 10)
+const pizza = new ItemMenu("Pizza", 50)
+const juice = new ItemMenu("juice", 10)
 
-const mesa1 = new Mesa(1)
+const table1 = new Table(1)
 
-mesa1.addItem(pizza)
-mesa1.addItem(suco)
+table1.addItem(pizza)
+table1.addItem(juice)
 
-mesa1.finalizeCheck()
+table1.finalizeCheck()
