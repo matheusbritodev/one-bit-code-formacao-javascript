@@ -32,9 +32,9 @@ class Project {
 
 const project = new Project("Projeto 1")
 
-const task1 = new Task("comer jgui", "High","04/08/2026")
-const task2 = new Task("molestar vinicius dnv", "Medium","05/08/2026")
-const task3 = new Task("dormir", "Low","03/08/2026")
+const task1 = new Task("1ª task", "High","04/08/2026")
+const task2 = new Task("2ª task", "Medium","05/08/2026")
+const task3 = new Task("3ª task", "Low","03/08/2026")
 
 console.log(project.addTask(task1))
 console.log(project.addTask(task2))
