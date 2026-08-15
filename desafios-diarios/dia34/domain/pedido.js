@@ -1,8 +1,9 @@
-import { Item, Bebida, Acompanhamento } from "./item.js"
+import { Item } from "./item.js"
 
 
 export class Pedido {
     #total = 0
+    #fechado = false
     constructor(idPedido, cliente) {
         this.itensPedido = []
         this.cliente = cliente
@@ -12,20 +13,31 @@ export class Pedido {
         return this.#total
     }
 
-    adicionarItem(item) {
-        this.itensPedido.push(item)
-        this.#total += i
-        return "Novo item adicionado com sucesso!"
+    setStatusPedido(status) {
+        return this.#fechado = status
     }
 
-    removerItem(id) {
-        this.itensPedido = this.itensPedido.filter((item) => item.id !== id)
+    adicionarItem(item) {
+        if (this.#fechado === false) {
+            this.itensPedido.push(item)
+            this.#total += item.calcularPrecoTotal()
+            item.precoTotal += item.calcularPrecoTotal()
+            return "Novo item adicionado com sucesso!"
+        } else {
+            return "ERRO: O pedido já foi fechado!"
+        }
+    }
+
+    removerItem(item) {
+        const index = this.itensPedido.indexOf(item)
+        if (index !== -1 ){
+            this.itensPedido.splice(index, 1)
+            this.#total -= item.calcularPrecoTotal()
+        }
         return "Item removido com sucesso"
     }
 
     visualizarPedidos() {
-        let total = ""
-        this.itensPedido.forEach((item) => total += `${item}\n`)
-        return total
+        return this.itensPedido
     }
 }
