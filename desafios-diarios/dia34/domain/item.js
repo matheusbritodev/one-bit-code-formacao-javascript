@@ -18,7 +18,7 @@ export class Acompanhamento extends Item {
 export class Bebida extends Item {
     constructor(id, nome, precoBase, categoria, nomeDoAdicional, precoAdicional) {
         super(id, nome, precoBase, categoria)
-        this.adicional = nomeDoAdicional
+        this.nomeDoAdicional = nomeDoAdicional
         this.precoAdicional = precoAdicional
     }
 }
