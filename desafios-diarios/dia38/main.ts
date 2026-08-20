@@ -22,5 +22,9 @@ function jokenpo(p1: string, p2: string) {
     }
 }
 
-
+console.log("--- RUNNING TESTS ---")
+console.log("Test 1 (Rock vs Scissors): expected 1 -> result:", jokenpo("Rock", "scissors"))
+console.log("Test 2 (Paper vs Paper):   expected 0 -> result:", jokenpo("paper", "paper"))
+console.log("Test 3 (Scissors vs Rock): expected 2 -> result:", jokenpo("scissors", "rock"))
+console.log("Test 4 (invalid entry): expected -1 -> result:", jokenpo("stone", "rock"))
 
